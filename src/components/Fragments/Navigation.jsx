@@ -37,7 +37,7 @@ export default function Navigation() {
   </div>
 
   <div>
-    <a href=""><span className="ri-download-2-line">{" "}</span>Resume</a>
+    <a href="/public/CV ABDULLAH RAMADAN ELANSARY.pdf" download><span className="ri-download-2-line">{" "}</span>Resume</a>
   </div>
 </nav>
 
