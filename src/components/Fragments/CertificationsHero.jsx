@@ -50,7 +50,7 @@ export default function CertificationsHero() {
       <div className="max-w-3xl mx-auto px-4">
         <div className="flex flex-col items-center gap-4 mb-10">
           <span className="text-xs font-medium bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 text-white px-4 py-1 rounded-full">
-            Certifications & ACHIEVEMENT
+            Certifications & Achievement
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500">
             I like to learn
@@ -63,7 +63,7 @@ export default function CertificationsHero() {
             During my studies, I completed over 15 certified online courses
             through Dicoding, and participated in various academic and
             independent projects — including a Hackathon (Best Team Award) and a
-            full-stack web development program at Talentclass (Best Project of
+            full-stack web development program at TalentHub (Best Project of
             the Batch).
           </p>
         </div>

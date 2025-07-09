@@ -6,7 +6,7 @@ export default function AboutPages() {
 
   return (
     <div
-      className={`pt-38 -mt-30 pb-20 transition-colors duration-300 ${
+      className={`min-h-screen pt-38 -mt-30 pb-20 transition-colors duration-300 ${
         isDark
           ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white"
           : "bg-gradient-to-br from-white via-blue-50 to-white text-gray-800"
