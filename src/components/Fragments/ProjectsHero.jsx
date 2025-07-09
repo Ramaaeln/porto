@@ -1,4 +1,5 @@
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useDarkMode } from "../Fragments/ToggleMode";
 
 const projects = [
   {
@@ -32,8 +33,14 @@ const projects = [
 ];
 
 export default function ProjectsHero() {
+  const { isDark } = useDarkMode();
+
   return (
-    <section className="py-16 bg-white">
+    <section
+      className={`py-16 transition-colors duration-500 ${
+        isDark ? "bg-gray-900 text-white" : "bg-white text-gray-800"
+      }`}
+    >
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500">
         Past Projects
       </h2>
@@ -42,7 +49,11 @@ export default function ProjectsHero() {
         {projects.map((project, index) => (
           <div
             key={index}
-            className="relative rounded-2xl overflow-hidden border border-blue-100 bg-white shadow-sm group transition duration-500 hover:shadow-xl animate-fadeIn"
+            className={`relative rounded-2xl overflow-hidden border group transition duration-500 hover:shadow-xl animate-fadeIn ${
+              isDark
+                ? "bg-slate-800 border-slate-700 shadow-none"
+                : "bg-white border-blue-100 shadow-sm"
+            }`}
           >
             <img
               src={project.img}
@@ -50,7 +61,13 @@ export default function ProjectsHero() {
               className="w-full h-52 object-cover transition-transform duration-500 group-hover:scale-105"
             />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-200/70 via-white/20 to-transparent z-10 pointer-events-none" />
+            <div
+              className={`absolute inset-0 bg-gradient-to-t ${
+                isDark
+                  ? "from-slate-900/70 via-slate-800/20"
+                  : "from-blue-200/70 via-white/20"
+              } to-transparent z-10 pointer-events-none`}
+            />
 
             <h3 className="absolute top-4 left-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 text-xl font-bold z-20 drop-shadow-sm">
               {project.name}
@@ -62,7 +79,7 @@ export default function ProjectsHero() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-cyan-500 transition-transform duration-300 hover:scale-110"
+                  className="text-blue-500 hover:text-cyan-400 transition-transform duration-300 hover:scale-110"
                   title="GitHub"
                 >
                   <FaGithub size={18} />
@@ -73,7 +90,7 @@ export default function ProjectsHero() {
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-cyan-500 transition-transform duration-300 hover:scale-110"
+                  className="text-blue-500 hover:text-cyan-400 transition-transform duration-300 hover:scale-110"
                   title="Live Site"
                 >
                   <FaExternalLinkAlt size={16} />
@@ -81,11 +98,21 @@ export default function ProjectsHero() {
               )}
             </div>
 
-            <div className="bg-gradient-to-r from-blue-100 to-blue-200 p-3 flex flex-wrap gap-2 z-30">
+            <div
+              className={`p-3 flex flex-wrap gap-2 z-30 ${
+                isDark
+                  ? "bg-slate-700"
+                  : "bg-gradient-to-r from-blue-100 to-blue-200"
+              }`}
+            >
               {project.techs.map((tech, i) => (
                 <span
                   key={i}
-                  className="text-xs bg-white text-slate-700 px-3 py-1 rounded-full font-medium shadow-sm hover:bg-blue-50 transition"
+                  className={`text-xs px-3 py-1 rounded-full font-medium shadow-sm transition ${
+                    isDark
+                      ? "bg-slate-800 text-slate-300 hover:bg-slate-700"
+                      : "bg-white text-slate-700 hover:bg-blue-50"
+                  }`}
                 >
                   {tech}
                 </span>
@@ -95,7 +122,6 @@ export default function ProjectsHero() {
         ))}
       </div>
 
-      {/* Tombol Show More on GitHub */}
       <div className="flex justify-center mt-12">
         <a
           href="https://github.com/Ramaaeln"

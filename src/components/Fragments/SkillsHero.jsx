@@ -1,84 +1,55 @@
+import { useDarkMode } from "../Fragments/ToggleMode";
+
 const techs = [
   null, null,
-  {
-    name: "JavaScript",
-    src: "/icons/javascript.svg",
-    glowColor: "#F7DF1E"
-  },
-  {
-    name: "Express",
-    src: "/icons/express.svg",
-    glowColor: "#AAAAAA"
-  },
-  {
-    name: "React",
-    src: "/icons/react.svg",
-    glowColor: "#61DAFB"
-  },
+  { name: "JavaScript", src: "/icons/javascript.svg", glowColor: "#F7DF1E" },
+  { name: "Express", src: "/icons/express.svg", glowColor: "#AAAAAA" },
+  { name: "React", src: "/icons/react.svg", glowColor: "#61DAFB" },
   null, null, null,
-  {
-    name: "Node",
-    src: "/icons/nodedotjs.svg",
-    glowColor: "#339933"
-  },
-  {
-    name: "Tailwindcss",
-    src: "/icons/tailwindcss.svg",
-    glowColor: "#06B6D4"
-  },
-  {
-    name: "PostgreSQL",
-    src: "/icons/postgresql.svg",
-    glowColor: "#336791"
-  },
-  {
-    name: "Supabase",
-    src: "/icons/supabase.svg",
-    glowColor: "#3FCF8E"
-  },
-  {
-    name: "MySQL",
-    src: "/icons/mysql.svg",
-    glowColor: "#4479A1"
-  },
+  { name: "Node", src: "/icons/nodedotjs.svg", glowColor: "#339933" },
+  { name: "Tailwindcss", src: "/icons/tailwindcss.svg", glowColor: "#06B6D4" },
+  { name: "PostgreSQL", src: "/icons/postgresql.svg", glowColor: "#336791" },
+  { name: "Supabase", src: "/icons/supabase.svg", glowColor: "#3FCF8E" },
+  { name: "MySQL", src: "/icons/mysql.svg", glowColor: "#4479A1" },
+  null, null, null,
+  { name: "CSS3", src: "/icons/css.svg", glowColor: "#1572B6" },
   null,
-  null, null,
-  {
-    name: "CSS3",
-    src: "/icons/css.svg",
-    glowColor: "#1572B6"
-  },
-  null,
-  {
-    name: "HTML5",
-    src: "/icons/html5.svg",
-    glowColor: "#E34F26"
-  },
+  { name: "HTML5", src: "/icons/html5.svg", glowColor: "#E34F26" },
   null, null
 ];
 
 export default function SkillsHero() {
+  const { isDark } = useDarkMode();
+
   return (
-    <section className="relative py-24 bg-white text-center overflow-hidden">
-      {/* --- GLOW ATAS --- */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-48 bg-gradient-to-b from-cyan-300/30 via-transparent to-transparent blur-3xl opacity-60 z-0 pointer-events-none" />
+    <section className={`relative py-24 overflow-hidden transition-colors duration-500 ${isDark ? "bg-gray-900 text-white" : "bg-white text-gray-800"}`}>
+      
+      <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-48 blur-3xl opacity-60 z-0 pointer-events-none ${
+        isDark
+          ? "bg-gradient-to-b from-blue-800/30 via-transparent to-transparent"
+          : "bg-gradient-to-b from-cyan-300/30 via-transparent to-transparent"
+      }`} />
 
-      {/* --- GLOW BAWAH --- */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-48 bg-gradient-to-t from-blue-300/30 via-transparent to-transparent blur-3xl opacity-60 z-0 pointer-events-none" />
+      <div className={`absolute bottom-0 left-1/2 -translate-x-1/2 w-[140%] h-48 blur-3xl opacity-60 z-0 pointer-events-none ${
+        isDark
+          ? "bg-gradient-to-t from-cyan-800/30 via-transparent to-transparent"
+          : "bg-gradient-to-t from-blue-300/30 via-transparent to-transparent"
+      }`} />
 
-      {/* --- JUDUL --- */}
-      <h2 className="relative z-10 text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 mb-10">
+      <h2 className="relative z-10 text-center text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 mb-10">
         Techstack I Use on a Daily Basis
       </h2>
 
-      {/* --- GRID ICONS --- */}
       <div className="relative z-10 grid grid-cols-5 sm:grid-cols-6 md:grid-cols-7 gap-4 px-4 max-w-6xl mx-auto">
         {techs.map((tech, index) => {
-          const glow = tech?.glowColor ?? "#CBD5E1";
+          const glow = tech?.glowColor ?? (isDark ? "#334155" : "#CBD5E1");
+
           return (
             <div
               key={index}
-              className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-xl border border-gray-200 bg-white flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-105"
+              className={`w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-xl border flex items-center justify-center transition-all duration-300 ease-in-out hover:scale-105 ${
+                isDark ? "bg-slate-800 border-slate-700" : "bg-white border-gray-200"
+              }`}
               style={{
                 boxShadow: `0 0 10px ${glow}33`,
               }}
@@ -103,5 +74,3 @@ export default function SkillsHero() {
     </section>
   );
 }
-
-

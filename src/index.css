@@ -14,7 +14,11 @@
   --color-border: #e2e8f0;
 }
 
-
+.dark {
+  --color-accent: #60a5fa; /* Blue-400 */
+  --color-text: #d1d5db; /* Gray-300 */
+  --color-bg: #111827; /* Gray-900 */
+}
 body{
   font-family: var(--font-heading);
   scroll-behavior: smooth;
