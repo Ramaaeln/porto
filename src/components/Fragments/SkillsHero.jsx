@@ -24,6 +24,7 @@ export default function SkillsHero() {
   return (
     <section className={`relative py-24 overflow-hidden transition-colors duration-500 ${isDark ? "bg-gray-900 text-white" : "bg-white text-gray-800"}`}>
       
+      {/* Background Gradient Effects */}
       <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-[140%] h-48 blur-3xl opacity-60 z-0 pointer-events-none ${
         isDark
           ? "bg-gradient-to-b from-blue-800/30 via-transparent to-transparent"
@@ -36,11 +37,13 @@ export default function SkillsHero() {
           : "bg-gradient-to-t from-blue-300/30 via-transparent to-transparent"
       }`} />
 
-      <h2 className="relative z-10 text-center text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 mb-10">
+      {/* Section Title */}
+      <h2 className="relative z-10 text-center text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-cyan-400 to-blue-500 mb-10 px-4">
         Techstack I Use on a Daily Basis
       </h2>
 
-      <div className="relative z-10 grid grid-cols-5 sm:grid-cols-6 md:grid-cols-7 gap-4 px-4 max-w-6xl mx-auto">
+      {/* Tech Icons Grid */}
+      <div className="relative z-10 grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-4 px-4 max-w-6xl mx-auto">
         {techs.map((tech, index) => {
           const glow = tech?.glowColor ?? (isDark ? "#334155" : "#CBD5E1");
 

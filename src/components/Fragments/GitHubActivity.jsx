@@ -14,13 +14,14 @@ export default function GitHubStats() {
         GitHub Contributions
       </h2>
 
-      <div className="flex justify-center">
+      <div className="flex justify-center px-4 sm:px-0">
         <div
-          className={`rounded-lg border shadow-md p-4 overflow-x-auto transition-colors duration-500 ${
+          className={`rounded-lg border shadow-md p-4 overflow-x-auto transition-colors duration-500 max-w-full ${
             isDark
               ? "border-slate-700 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-800"
               : "border-blue-100 bg-gradient-to-br from-blue-50 via-white to-cyan-50"
           }`}
+          style={{ width: "max-content", maxWidth: "100%" }}
         >
           <GitHubCalendar
             username="Ramaaeln"
