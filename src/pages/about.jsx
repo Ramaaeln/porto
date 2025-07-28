@@ -38,7 +38,7 @@ export default function AboutPages() {
         </h3>
         <div className="space-y-4">
           <p className={`text-sm md:text-base leading-relaxed ${isDark ? "text-gray-300" : "text-gray-700"}`}>
-            I am a 4th-semester Computer Science student at Universitas Pamulang
+            I am a 5th-semester Computer Science student at Universitas Pamulang
             with a strong interest in Full-Stack Web Development. Since my 3rd
             semester, I've been actively building applications using technologies
             like React.js, Node.js, Express.js, and Supabase.
