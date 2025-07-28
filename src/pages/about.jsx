@@ -22,7 +22,7 @@ export default function AboutPages() {
             isDark ? "text-gray-300" : "text-gray-600"
           }`}
         >
-          Passionate 4th-semester Computer Science student at Universitas
+          Passionate 5th-semester Computer Science student at Universitas
           Pamulang, primarily focused on Full-Stack Web Development, with a
           foundational understanding of Cybersecurity concepts.
         </p>
